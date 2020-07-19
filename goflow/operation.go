@@ -72,11 +72,7 @@ func (operation *ServiceOperation) Execute(data []byte, option map[string]interf
 	var result []byte
 	var err error
 
-	reqId := fmt.Sprintf("%v", option["request-id"])
-
 	if operation.Mod != nil {
-		fmt.Printf("[Request `%s`] Executing workload `%s`\n",
-			reqId, operation.Id)
 		result, err = executeWorkload(operation, data)
 		if err != nil {
 			err = fmt.Errorf("function(%s), error: function execution failed, %v",
