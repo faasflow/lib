@@ -132,7 +132,7 @@ func makeQueryStringFromParam(params map[string][]string) string {
 	result := ""
 	for key, array := range params {
 		for _, value := range array {
-			keyVal := fmt.Sprintf("%s-%s", key, value)
+			keyVal := fmt.Sprintf("%s=%s", key, value)
 			if result == "" {
 				result = "?" + keyVal
 			} else {
